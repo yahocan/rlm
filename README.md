@@ -95,6 +95,14 @@ modal setup   # authenticate account
 > [!WARNING]
 > **Prime Intellect Sandboxes** are currently a beta feature. See the [documentation](https://docs.primeintellect.ai/sandboxes/overview) for more information.
 
+> [!IMPORTANT]
+> **Prime Intellect Sandboxes are not yet implemented** in `rlm`. This feature is not available at the moment until we patch some bugs.
+
+See [Prime CLI setup instructions](https://docs.primeintellect.ai/inference/overview) for getting setup. You will need to set your CLI key.
+```
+export PRIME_API_KEY=...
+```
+
 
 ### Model Providers
 We currently support most major clients (OpenAI, Anthropic), as well as the router platforms (OpenRouter, Portkey, LiteLLM). For local models, we recommend using vLLM (which interfaces with the [OpenAI client](https://github.com/alexzhang13/rlm/blob/main/rlm/clients/openai.py)). To view or add support for more clients, start by looking at [`rlm/clients/`](https://github.com/alexzhang13/rlm/tree/main/rlm/clients).
