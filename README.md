@@ -7,7 +7,8 @@
 
 <p align="center" style="font-size:1.3em">
   <a href="https://arxiv.org/abs/2512.24601">Full Paper</a> •
-  <a href="https://alexzhang13.github.io/blog/2025/rlm/">Blogpost</a>
+  <a href="https://alexzhang13.github.io/blog/2025/rlm/">Blogpost</a> •
+  <a href="https://alexzhang13.github.io/rlm/">Documentation</a>
 </p>
 
 <p align="center">
