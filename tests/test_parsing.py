@@ -90,9 +90,7 @@ class TestFindFinalAnswer:
         text = "Check the variable:\nFINAL_VAR(result)"
         # Create a mock environment that returns the variable value
         mock_env = Mock()
-        mock_env.execute_code.return_value = REPLResult(
-            stdout="42", stderr="", locals={}
-        )
+        mock_env.execute_code.return_value = REPLResult(stdout="42", stderr="", locals={})
         result = find_final_answer(text, environment=mock_env)
         assert result == "42"
         # Verify execute_code was called with the correct code
@@ -199,9 +197,7 @@ multiline answer)"""
     def test_final_var_takes_precedence_over_final(self):
         """Test that FINAL_VAR is checked first and takes precedence over FINAL."""
         mock_env = Mock()
-        mock_env.execute_code.return_value = REPLResult(
-            stdout="var_value", stderr="", locals={}
-        )
+        mock_env.execute_code.return_value = REPLResult(stdout="var_value", stderr="", locals={})
 
         # If both appear, FINAL_VAR should be found first (checked first in the function)
         text = "FINAL_VAR(result)\nFINAL(direct_answer)"
@@ -244,9 +240,7 @@ multiline answer)"""
             # Test retrieving list variable
             text = "FINAL_VAR(answer)"
             result = find_final_answer(text, environment=env)
-            assert (
-                result == "[1, 2, 3, 4, 5]"
-            ), f"Expected '[1, 2, 3, 4, 5]', got '{result}'"
+            assert result == "[1, 2, 3, 4, 5]", f"Expected '[1, 2, 3, 4, 5]', got '{result}'"
 
             # Test retrieving computed variable
             text = "FINAL_VAR(computed)"
